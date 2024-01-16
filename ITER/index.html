@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Projet ITER</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="shortcut icon" href="images\Logo_cailloux.png" type="image/x-icon">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<h6 onclick="window.location.reload()"><img src="images\Logo_cailloux.png" width="300" height="200"></h6><br>
+					<header id="header">
+						<div class="content">
+							<div class="inner">
+								<h1><a href="#Projet" style="text-decoration: none;">Projet ITER</a></h1>
+								<p>Par : Cayol Mattéo, Kylian Castillo, Thomas Touffut
+								</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#Matteo">Mattéo</a></li>
+								<li><a href="#Thomas">Thomas</a></li>
+								<li><a href="#Kylian">Kylian</a></li>
+							</ul>
+						</nav>
+
+						<nav>
+							<ul>
+								<li><a href="#Ressource">Ressource</a></li>
+								<li><a href="#Capteur">Capteur</a></li>
+								<li><a href="#Actionneur">Actionneur</a></li>
+
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<article id="Projet">
+							<h2 class="major">Projet</h2>
+							<h3>Fiche Presentation</h3>
+							<embed src="ressource 📖\Fiche Presentation-ITER.pdf" type="application/pdf" width="100%" height="600px" />
+						</article>
+
+						<!-- Mattéo -->
+							<article id="Matteo">
+								<h2 class="major">Mattéo</h2>
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<h4>Énoncé des tâches</h4>
+								<p>
+									Mettre en œuvre les capteurs incrémentaux associés à la rotation des roues,<br>
+									permettant de définir la vitesse et la position du robot, données gérées par l’étudiant<br>
+									4 (IR).<br>
+									Assurer la surveillance de l’état de la batterie, mesure du courant consommé et de la<br>
+									tension aux bornes de la batterie, affichage de ces données sur écran LCD.<br>
+									Réception et émission de données en Bluetooth, affichage de ces données sur<br>
+									smartphone android.<br>
+									Assurer la gestion du déplacement en mode manuel (télécommande, joystick,<br>
+									application android).<br>
+									Assurer le pilotage des moteurs dans les deux sens de rotation.<br>
+									Réaliser la conception détaillée du matériel/logiciel<br>
+									Réaliser une maquette, un prototype logiciel/matériel<br>
+									Installer un système ou un service.<br>
+								</p>
+								<h4><li><a href="#Batterie" style="text-decoration: none;">Mesure batterie</a></li></h4>
+								<h4><li><a href="#Vitesse" style="text-decoration: none;">Mesure vitesse robot</a></li></h4>
+								<h4><li><a href="#Deplacement" style="text-decoration: none;">Gestion du déplacement </a></li></h4>
+								<h4><li><a href="#Moteur" style="text-decoration: none;">Pilotage des moteurs</a></li></h4>
+								<h4><li><a href="#LCD" style="text-decoration: none;">LCD</a></li></h4>
+								<h4><li><a href="#Bluetooth" style="text-decoration: none;">Bluetooth</a></li></h4>
+								<h4><li><a href="#android" style="text-decoration: none;">Application android</a></li></h4>
+							</article>
+							
+							<!-- Batterie -->
+								<article id="Batterie">
+								<h2 class="major">Batterie</h2>
+								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+								<p>
+									Mesure de la tension : Voltmètre<br>
+									Mesure du courant : Ampèrmètre<br>
+									Comparer la tension mesurée à la tension nominale de la batterie<br>
+									Convertir la tension mesurée en pourcentage restant<br>
+									Transmission donnée vers esp32<br>
+									Conversion donnée CAN<br>
+									Affichage sur LCD, moniteur série<br>
+									<table>
+										<tr>
+											<td>Tension</td>
+											<td>Pourcentage de capacité restante</td>
+										</tr>
+										<tr>
+											<td>12V</td>
+											<td>100%</td>
+										</tr>
+										<tr>
+											<td>6V</td>
+											<td>50%</td>
+										</tr>
+										<tr>
+											<td>0V</td>
+											<td>0%</td>
+										</tr>
+									</table>
+								</p>
+								</article>
+
+								<!-- Vitesse -->
+								<article id="Vitesse">
+								<h2 class="major">Vitesse</h2>
+								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+								</article>
+
+								<!-- Deplacement -->
+								<article id="Deplacement">
+									<h2 class="major">Deplacement</h2>
+									<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+									</article>
+
+								<!-- Moteur -->
+								<article id="Moteur">
+									<h2 class="major">Moteur</h2>
+									<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+									</article>
+
+								<!-- LCD -->
+								<article id="LCD">
+									<h2 class="major">LCD</h2>
+									<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+									</article>
+
+								<!-- Bluetooth -->
+								<article id="Bluetooth">
+									<h2 class="major">Bluetooth</h2>
+									<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+									</article>
+
+								<!-- android -->
+								<article id="android">
+								<h2 class="major">android</h2>
+								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+								<p>
+									Création d'une application apk sous android.<br>
+									design de l’application.<br>
+									création du script avec “mit app inventor et mblock”<br>
+									Installation du modules bluetooth sur l’arduino uno<br>
+																	<br>
+									Allumage d’une led grâce à l’interface sur le téléphone<br>
+								</p>
+								<span class="image main"><img src="images\Capture d'écran 2024-01-13 122515.png" alt="" /></span>
+								</article>
+
+						<!-- Thomas -->
+							<article id="Thomas">
+								<h2 class="major">Thomas</h2>
+								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<h4>Énoncé des tâches</h4>
+								<p>
+									Mettre en œuvre les capteurs de distance entre le robot et son environnement.<br>
+									Module Ultrason, infrarouge…<br>
+									Mettre en œuvre les capteurs de position et de couleur de la brique à déplacer.<br>
+									Assurer la gestion de la pince pour saisir la brique et la reposer au bon endroit.<br>
+									Réaliser la conception détaillée du matériel/logiciel<br>
+									Réaliser une maquette, un prototype logiciel/matériel<br>
+									Installer un système ou un service.<br>
+								</p>
+								</article>
+
+						<!-- Kylian -->
+							<article id="Kylian">
+								<h2 class="major">Kylian</h2>
+								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+								<h4>Énoncé des tâches</h4>
+								<p>
+									Mettre en œuvre les capteurs de suivi de lignes et du parcours.<br>
+									Assurer la gestion du déplacement en mode automatique.<br>
+									Assurer le pilotage des moteurs dans les deux sens de rotation.<br>
+									Réaliser l’acquisition et la transmission par ondes radio des grandeurs physiques.<br>
+									Réaliser la conception détaillée du matériel/logiciel. Réaliser une maquette, un<br>
+									prototype logiciel/matériel Installer un système ou un service.<br>
+								</p>
+								</article>
+
+						<!-- Ressource -->
+						<article id="Ressource">
+							<h2 class="major">Ressource</h2>
+							<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+							</article>
+
+						<!-- Capteur -->
+						<article id="Capteur">
+							<h2 class="major">Capteur</h2>
+							<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+							</article>
+							
+						<!-- Actionneur -->
+						<article id="Actionneur">
+							<h2 class="major">Actionneur</h2>
+							<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+							</article>	
+					</div>
+
+				<!-- Footer -->
+					<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; Design by Cayol Mattéo </a></span>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+		<video autoplay muted loop id="video-background">
+			<source src="images\Sci fi Background Loop.mp4" type="video/mp4">
+		  </video>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
