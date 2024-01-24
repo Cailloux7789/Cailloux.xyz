@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Déroulant</title>
+    <style>
+        /* Style CSS pour le menu déroulant */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            width: auto; /* Ajusté pour qu'il n'y ait pas de largeur fixe */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: #333;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Data base (en cours de développement)</h1>
+
+    <div class="dropdown">
+        <span class="dropdown-item">Autre</span>
+        <div class="dropdown-content">
+            <a href="Autre/Alphabet grec.pdf">Alphabet grec</a><br>
+            <a href="Autre/ecole.pdf">ecole</a><br>
+            <a href="Autre/formulaire-scientifique.pdf">formulaire-scientifique</a><br>
+            <a href="Autre/scei-concours.fr_stat2023_tsi.html.pdf">scei-concours.fr_stat2023_tsi.html</a><br>
+        </div>
+    </div>
+    <div class="dropdown">
+        <span class="dropdown-item">BTS</span>
+        <div class="dropdown-content">
+            <a href="">test</a><br>
+        </div>
+    </div>
+    <div class="dropdown">
+        <span class="dropdown-item">Cours</span>
+        <div class="dropdown-content">
+            <a href="">test</a><br>
+        </div>
+    </div>
+    <div class="dropdown">
+        <span class="dropdown-item">Info</span>
+        <div class="dropdown-content">
+            <a href="">test</a><br>
+        </div>
+    </div>
+    <div class="dropdown">
+        <span class="dropdown-item">STI2D</span>
+        <div class="dropdown-content">
+            <a href="STI2D/1bp_mcc.py">1bp_mcc</a><br>
+            <a href="STI2D/alarme_pir.py">alarme_pir</a><br>
+            <a href="STI2D/alarme_pir2.py">alarme_pir2</a><br>
+            <a href="STI2D/BP.py">BP</a><br>
+            <a href="STI2D/BP2.py">BP2</a><br>
+            <a href="STI2D/cligno.py">cligno</a><br>
+            <a href="STI2D/cligno_bp.py">cligno_bp</a><br>
+            <a href="STI2D/cligno_bp_lock.py">cligno_bp_lock</a><br>
+            <a href="STI2D/cligno_fonctions.py">cligno_fonctions</a><br>
+            <a href="STI2D/cligno_fonctions_bis.py">cligno_fonctions_bis</a><br>
+            <a href="STI2D/cligno_fonctions_bis2.py">cligno_fonctions_bis2</a><br>
+            <a href="STI2D/cligno_fonctions2.py">cligno_fonctions2</a><br>
+            <a href="STI2D/cligno_label.py">cligno_label</a><br>
+            <a href="STI2D/cligno_label2.py">cligno_label2</a><br>
+            <a href="STI2D/cligno_Led_BP2.py">cligno_Led_BP2</a><br>
+            <a href="STI2D/cligno2.py">cligno2</a><br>
+            <a href="STI2D/custom2.py">custom2</a><br>
+            <a href="STI2D/wifi.html">wifi</a><br>
+        </div>
+    </div>
+    
+
+</body>
+</html>
