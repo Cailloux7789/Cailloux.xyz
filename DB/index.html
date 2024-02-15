@@ -1,96 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Déroulant</title>
+    <title>Liste des fichiers et dossiers</title>
     <style>
-        /* Style CSS pour le menu déroulant */
-        .dropdown {
-            position: relative;
-            display: inline-block;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
         }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            width: auto; /* Ajusté pour qu'il n'y ait pas de largeur fixe */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
+        h1 {
+            font-size: 30px;
         }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
-
-        .dropdown-item {
-            padding: 12px 16px;
+        li {
+            margin-bottom: 5px;
+        }
+        a {
             text-decoration: none;
-            display: block;
-            color: #333;
+            color: #007bff;
         }
-
-        .dropdown-item:hover {
-            background-color: #f1f1f1;
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+    <h1>Liste des fichiers et dossiers</h1>
+    <ul id="fileList">
+        <!-- Insérez ici les éléments de liste générés dynamiquement -->
+    </ul>
 
-    <h1>Data base (en cours de développement)</h1>
+    <script>
+        // Chemin vers le dossier à parcourir
+        var directory = 'Cailloux.xyz\DB';
 
-    <div class="dropdown">
-        <span class="dropdown-item">Autre</span>
-        <div class="dropdown-content">
-            <a href="Autre/Alphabet grec.pdf">Alphabet grec</a><br>
-            <a href="Autre/ecole.pdf">ecole</a><br>
-            <a href="Autre/formulaire-scientifique.pdf">formulaire-scientifique</a><br>
-            <a href="Autre/scei-concours.fr_stat2023_tsi.html.pdf">scei-concours.fr_stat2023_tsi.html</a><br>
-        </div>
-    </div>
-    <div class="dropdown">
-        <span class="dropdown-item">BTS</span>
-        <div class="dropdown-content">
-            <a href="">test</a><br>
-        </div>
-    </div>
-    <div class="dropdown">
-        <span class="dropdown-item">Cours</span>
-        <div class="dropdown-content">
-            <a href="">test</a><br>
-        </div>
-    </div>
-    <div class="dropdown">
-        <span class="dropdown-item">Info</span>
-        <div class="dropdown-content">
-            <a href="">test</a><br>
-        </div>
-    </div>
-    <div class="dropdown">
-        <span class="dropdown-item">STI2D</span>
-        <div class="dropdown-content">
-            <a href="STI2D/1bp_mcc.py">1bp_mcc</a><br>
-            <a href="STI2D/alarme_pir.py">alarme_pir</a><br>
-            <a href="STI2D/alarme_pir2.py">alarme_pir2</a><br>
-            <a href="STI2D/BP.py">BP</a><br>
-            <a href="STI2D/BP2.py">BP2</a><br>
-            <a href="STI2D/cligno.py">cligno</a><br>
-            <a href="STI2D/cligno_bp.py">cligno_bp</a><br>
-            <a href="STI2D/cligno_bp_lock.py">cligno_bp_lock</a><br>
-            <a href="STI2D/cligno_fonctions.py">cligno_fonctions</a><br>
-            <a href="STI2D/cligno_fonctions_bis.py">cligno_fonctions_bis</a><br>
-            <a href="STI2D/cligno_fonctions_bis2.py">cligno_fonctions_bis2</a><br>
-            <a href="STI2D/cligno_fonctions2.py">cligno_fonctions2</a><br>
-            <a href="STI2D/cligno_label.py">cligno_label</a><br>
-            <a href="STI2D/cligno_label2.py">cligno_label2</a><br>
-            <a href="STI2D/cligno_Led_BP2.py">cligno_Led_BP2</a><br>
-            <a href="STI2D/cligno2.py">cligno2</a><br>
-            <a href="STI2D/custom2.py">custom2</a><br>
-            <a href="STI2D/wifi.html">wifi</a><br>
-        </div>
-    </div>
-    
+        // Fonction pour récupérer la liste des fichiers et dossiers
+        function fetchFileList(directory) {
+            var fileListElement = document.getElementById('fileList');
+            // Ajouter une barre oblique à la fin du chemin si elle est manquante
+            if (directory.charAt(directory.length - 1) !== '/') {
+                directory += '/';
+            }
+            // Ajouter le lien parent (si applicable)
+            if (directory !== '/') {
+                var listItem = document.createElement('li');
+                var linkElement = document.createElement('a');
+                linkElement.setAttribute('href', '..');
+                linkElement.textContent = '[Dossier parent]';
+                listItem.appendChild(linkElement);
+                fileListElement.appendChild(listItem);
+            }
+            // Appel AJAX pour obtenir la liste des fichiers et dossiers
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', directory);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // Convertir la réponse en HTML
+                    var doc = new DOMParser().parseFromString(xhr.responseText, 'text/html');
+                    // Récupérer les liens de la page
+                    var links = doc.querySelectorAll('a');
+                    // Afficher les liens dans la liste
+                    links.forEach(function (link) {
+                        var fileName = link.getAttribute('href');
+                        if (fileName !== '../') { // Ignorer les liens parent
+                            var listItem = document.createElement('li');
+                            var linkElement = document.createElement('a');
+                            linkElement.setAttribute('href', directory + fileName);
+                            linkElement.textContent = fileName;
+                            listItem.appendChild(linkElement);
+                            fileListElement.appendChild(listItem);
+                        }
+                    });
+                } else {
+                    console.error('Erreur de chargement du dossier');
+                }
+            };
+            xhr.send();
+        }
 
+        // Appeler la fonction avec le chemin vers le dossier
+        fetchFileList(directory);
+    </script>
 </body>
 </html>
