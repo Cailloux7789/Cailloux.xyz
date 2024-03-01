@@ -1660,12 +1660,32 @@ input, select, textarea {
 		
 		#video-background {
 			position: fixed;
-			right: 0;
-			bottom: 0;
-			min-width: 100%;
-			min-height: 100%;
-			width: auto;
-			height: auto;
-			z-index: -1000;
-			overflow: hidden;
-		  }
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			height: 100%;
+			transform: translate(-50%, -50%) scale(1);
+			transition: transform 0.5s ease;
+			z-index: -1;
+		}
+		
+		@media screen and (max-aspect-ratio: 16/9) {
+			#video-background {
+				width: auto;
+				height: 100%;
+			}
+		}
+		
+		@media screen and (min-aspect-ratio: 16/9) {
+			#video-background {
+				width: 100%;
+				height: auto;
+			}
+		}
+		
+		@media (max-width: 800px) {
+			#video-background {
+				transform: translate(-50%, -50%) scale(0.8);
+			}
+		}
+		
