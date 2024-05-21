@@ -358,7 +358,7 @@ input, select, textarea {
 		}
 
 		.row > .col-4 {
-			width: 33.33333%;
+			width: 50%;
 		}
 
 		.row > .off-4 {
@@ -2819,7 +2819,7 @@ input, select, textarea {
 	}
 
 		.main.style1 {
-			background: #fff;
+			background: #ffffff;
 		}
 
 		.main.style2 {
@@ -2827,7 +2827,6 @@ input, select, textarea {
 			color: rgba(255, 255, 255, 0.75);
 			background-attachment: fixed,							fixed;
 			background-image: url("images/overlay1.png"), url("../../images/header.jpg");
-			background-size: auto,							cover;
 		}
 
 			.main.style2 a {
